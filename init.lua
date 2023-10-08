@@ -13,11 +13,13 @@ vim.opt.rtp:prepend(lazypath)
 
 local core = require "core"
 
-local crust = {}
+local ext = {}
 if vim.g.vscode then
-  crust = require "crust"
+  ext = require "vscode"
+else
+  ext = require "crust"
 end
 
-local plugins = vim.tbl_extend("force", core.plugins, crust)
+local plugins = vim.tbl_extend("force", core.plugins, ext)
 
 require("lazy").setup(plugins, {})
