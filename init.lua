@@ -11,4 +11,13 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup(plugins, opts)
+local core = require "core"
+
+local crust = {}
+if vim.g.vscode then
+  crust = require "crust"
+end
+
+local plugins = vim.tbl_extend("force", core.plugins, crust)
+
+require("lazy").setup(plugins, {})
