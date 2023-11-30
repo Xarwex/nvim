@@ -9,5 +9,8 @@ map('n', '<leader>ra', notify 'editor.action.rename')
 map('n', '<leader>ca', notify 'editor.action.refactor')
 map('n', '<leader>fw', notify 'workbench.action.findInFiles')
 map('n', '<leader>ff', notify 'workbench.action.quickOpen')
+map('n', '<leader>x', notify 'workbench.action.closeActiveEditor')
+
+map('n', '<c-n>' , notify 'workbench.action.toggleSidebarVisibility')
 
 return {}
