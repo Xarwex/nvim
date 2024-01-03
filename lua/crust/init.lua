@@ -1,1 +1,3 @@
-return require "crust.plugins" 
+local M = {}
+M.plugins = require "crust.plugins"
+return M

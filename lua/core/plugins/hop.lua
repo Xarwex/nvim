@@ -6,6 +6,6 @@ return {
     lazy = false,
     config = function()
       require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
-      map("n", "<leader><leader>w", ":HopWord<CR>")
+      map("n", "<leader>w", ":HopWord<CR>")
     end
   }
