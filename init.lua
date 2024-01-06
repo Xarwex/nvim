@@ -1,3 +1,5 @@
+local opt = vim.opt
+local g = vim.g
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -11,18 +13,12 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local core = require "core"
-local plugins = core.plugins
-
-local ext = {}
-if vim.g.vscode then
-  ext = require "vscode"
-else
-  ext = require "crust"
-end
-
-if ext.plugins ~= nil then
-  table.insert(plugins, ext.plugins)
-end
+opt.clipboard = "unnamedplus"
+g.mapleader = " "
+local plugins = require "plugins"
 
 require("lazy").setup(plugins, {})
+
+if not vim.g.vscode then
+  require "mappings"
+end

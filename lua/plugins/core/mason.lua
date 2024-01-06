@@ -3,5 +3,6 @@ return {
     ensure_installed = {"lua", "rust"},
     config = function(_, opts)
       require("mason").setup(opts)
-    end
+    end,
+    cond = not vim.g.vscode
 }
