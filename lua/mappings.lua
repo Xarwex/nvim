@@ -1,4 +1,6 @@
 local wk = require("which-key")
+local cmp = require("cmp")
+local luasnip = require("luasnip")
 
 wk.register({
     ["<leader>"] = {
@@ -22,5 +24,8 @@ wk.register({
             t = { ":Telescope git_status <CR>", "Git status"},
             m = { ":Telescope git_commits <CR>", "Git commits"},
         }
-    }
+    },
+    -- ["<Tab>"] = { function()
+        
+    -- end }
 })
