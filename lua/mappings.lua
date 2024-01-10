@@ -14,6 +14,7 @@ wk.register({
             h = { ":Telescope help_tags <CR>", "Help" },
             o = { ":Telescope oldfiles <CR>", "Old files" },
             z = { ":Telescope current_buffer_fuzzy_find <CR>", "Fuzzy find in current buffer" },
+            c = { ":Telescope commands <CR>", "Commands" }
         },
         ["<leader>"] = {
             name = "hop",
@@ -23,8 +24,10 @@ wk.register({
             name = "git",
             t = { ":Telescope git_status <CR>", "Git status"},
             m = { ":Telescope git_commits <CR>", "Git commits"},
-        }
+        },
+        e = { ":NvimTreeFocus <CR>", "Focus Tree"}
     },
+    ["<C-n>"] = { ":NvimTreeToggle <CR>", "Toggle Tree" }
     -- ["<Tab>"] = { function()
         
     -- end }
