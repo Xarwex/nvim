@@ -3,5 +3,6 @@ return {
     config = function()
         require("indent_blankline").setup()
     end,
+    enabled = false,
     cond = not vim.g.vscode
 }

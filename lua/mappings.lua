@@ -21,7 +21,12 @@ wk.register({
             w = { ":HopWord <CR>", "HopWord" },
         },
         g = {
-            name = "git",
+            name = "go",
+            r = { "Telescope lsp_references", "LSP references" },
+            d = { "Telescope lsp_definitions", "LSP definitions" },
+        },
+        i = {
+            name  = "git",
             t = { ":Telescope git_status <CR>", "Git status"},
             m = { ":Telescope git_commits <CR>", "Git commits"},
         },
