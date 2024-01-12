@@ -5,5 +5,6 @@ return {
     },
     config = function()
         require("nvim-tree").setup()
-    end
+    end,
+    cond = not vim.g.vscode,
 }

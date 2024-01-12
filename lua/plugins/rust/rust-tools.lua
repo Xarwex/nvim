@@ -7,5 +7,6 @@ return {
     -- end,
     config = function(_, opts)
       require('rust-tools').setup(opts)
-    end
+    end,
+    cond = not vim.g.vscode,
 }

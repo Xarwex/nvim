@@ -10,4 +10,6 @@ return {
         crates.show()
         require("core.utils").load_mappings("crates")
     end,
+    cond = not vim.g.vscode,
+    enabled = false,
 }
