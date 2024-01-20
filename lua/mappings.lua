@@ -3,6 +3,11 @@ local cmp = require("cmp")
 local luasnip = require("luasnip")
 
 wk.register({
+    ["<Esc>"] = { ":noh <CR>", "Clear highlights"},
+    ["<C-h>"] = { "<C-w>h", "Window left" },
+    ["<C-l>"] = { "<C-w>l", "Window right" },
+    ["<C-j>"] = { "<C-w>j", "Window down" },
+    ["<C-k>"] = { "<C-w>k", "Window up" },
     ["<leader>"] = {
         f = {
             name = "telescope",
@@ -22,15 +27,17 @@ wk.register({
         },
         g = {
             name = "go",
-            r = { "Telescope lsp_references", "LSP references" },
-            d = { "Telescope lsp_definitions", "LSP definitions" },
+            r = { ":Telescope lsp_references <CR>", "LSP references" },
+            d = { ":Telescope lsp_definitions <CR>", "LSP definitions" },
         },
         i = {
             name  = "git",
             t = { ":Telescope git_status <CR>", "Git status"},
             m = { ":Telescope git_commits <CR>", "Git commits"},
         },
-        e = { ":NvimTreeFocus <CR>", "Focus Tree"}
+        e = { ":NvimTreeFocus <CR>", "Focus Tree"},
+        ll = { require("lsp_lines").toggle, "Toggle lsp lines" }
+
     },
     ["<C-n>"] = { ":NvimTreeToggle <CR>", "Toggle Tree" }
     -- ["<Tab>"] = { function()
