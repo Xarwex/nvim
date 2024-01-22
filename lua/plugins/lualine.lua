@@ -37,17 +37,17 @@ return {
                     "diagnostics",
                     {
                         'buffers',
-                        use_mode_colors = false,
                         symbols = {
-                            -- modified = "[]",
                             alternate_file = "[ᛝ] "
-                        }
+                        },
                     } },
                 lualine_x = { {
                     'filename',
                     path = 1, -- relative path
                     symbols = {
-                        unnamed = '[ᛟ]'
+                        modified = '',
+                        readonly = '[ᛟ]',
+                        unnamed = '',
                     }
                 } },
                 lualine_y = {},
