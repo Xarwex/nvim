@@ -36,11 +36,10 @@ wk.register({
             m = { ":Telescope git_commits <CR>", "Git commits"},
         },
         e = { ":NvimTreeFocus <CR>", "Focus Tree"},
-        ll = { require("lsp_lines").toggle, "Toggle lsp lines" }
-
+        ll = { require("lsp_lines").toggle, "Toggle lsp lines" },
+        x = { ":bd <CR>", "Close current" },
     },
-    ["<C-n>"] = { ":NvimTreeToggle <CR>", "Toggle Tree" }
-    -- ["<Tab>"] = { function()
-        
-    -- end }
+    ["<C-n>"] = { ":NvimTreeToggle <CR>", "Toggle Tree" },
+    ["<Tab>"] = { ":BufferLineCycleNext <CR>", "Cycle next tab", },
+    ["<S-Tab>"] = { ":BufferLineCyclePrev <CR>", "Cycle prev tab" },
 })
