@@ -15,5 +15,6 @@ return {
             dapui.close()
         end
     end,
-    cond = not vim.g.vscode
+    cond = not vim.g.vscode,
+    enabled = false
 }

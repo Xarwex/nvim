@@ -16,6 +16,8 @@ opt.rtp:prepend(lazypath)
 g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1
 
+opt.lazyredraw = true
+
 opt.showmode = false
 
 opt.relativenumber = true

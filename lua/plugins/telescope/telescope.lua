@@ -1,11 +1,7 @@
 return {
   "nvim-telescope/telescope.nvim",
   dependencies = { 'nvim-lua/plenary.nvim', { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' } },
-  -- init = function()
-  --   map("n", "<leader>ma", ":Telescope marks <CR>")
-  --   map("n", "<leader>gt", ":Telescope git_status <CR>")
-  --   map("n", "<leader>cm", ":Telescope git_commits <CR>")
-  -- end,
+  cmd = "Telescope",
   opts = function()
     return {
       defaults = {

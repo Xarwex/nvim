@@ -4,5 +4,6 @@ return {
     config = function(_, _)
         require("nvim-dap-virtual-text").setup()
     end,
-    cond = not vim.g.vscode
+    cond = not vim.g.vscode,
+    enabled = false,
 }

@@ -8,6 +8,7 @@ local tbl = {
 return {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
+    event = "VeryLazy",
     opts = function()
         return {
             options = {
@@ -50,14 +51,6 @@ return {
                         unnamed = '',
                     }
                 } },
-                lualine_y = {},
-                lualine_z = {},
-            },
-            tabline = {
-                lualine_a = {},
-                lualine_b = {},
-                lualine_c = {},
-                lualine_x = {},
                 lualine_y = {},
                 lualine_z = {},
             },

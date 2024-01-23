@@ -3,19 +3,18 @@ return {
     dependencies = {
         "nvim-tree/nvim-web-devicons"
     },
+    cmd = {
+        "NvimTreeFocus",
+        "NvimTreeToggle",
+    },
+    event = "VeryLazy",
     opts = function()
         return {
-            hijack_unnamed_buffer_when_opening = true,
             view = {
                 width = 50,
                 centralize_selection = true,
                 number = true,
                 relativenumber = true,
-                float = {
-                    open_win_config = {
-                        border = "shadow"
-                    }
-                }
             },
             renderer = {
                 highlight_opened_files = "all",

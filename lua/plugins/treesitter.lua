@@ -2,6 +2,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
     build = ":TSUpdate",
+    -- event = { "LazyFile", "VeryLazy" },
     opts = {
         ensure_installed = {
             "lua",

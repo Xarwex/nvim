@@ -1,9 +1,7 @@
 local wk = require("which-key")
-local cmp = require("cmp")
-local luasnip = require("luasnip")
 
 wk.register({
-    ["<Esc>"] = { ":noh <CR>", "Clear highlights"},
+    ["<Esc>"] = { ":noh <CR>", "Clear highlights" },
     ["<C-h>"] = { "<C-w>h", "Window left" },
     ["<C-l>"] = { "<C-w>l", "Window right" },
     ["<C-j>"] = { "<C-w>j", "Window down" },
@@ -21,25 +19,22 @@ wk.register({
             z = { ":Telescope current_buffer_fuzzy_find <CR>", "Fuzzy find in current buffer" },
             c = { ":Telescope commands <CR>", "Commands" }
         },
-        ["<leader>"] = {
-            name = "hop",
-            w = { ":HopWord <CR>", "HopWord" },
-        },
+        w = { ":HopWord <CR>", "HopWord" },
         g = {
             name = "go",
             r = { ":Telescope lsp_references <CR>", "LSP references" },
             d = { ":Telescope lsp_definitions <CR>", "LSP definitions" },
         },
         i = {
-            name  = "git",
-            t = { ":Telescope git_status <CR>", "Git status"},
-            m = { ":Telescope git_commits <CR>", "Git commits"},
+            name = "git",
+            t    = { ":Telescope git_status <CR>", "Git status" },
+            m    = { ":Telescope git_commits <CR>", "Git commits" },
         },
-        e = { ":NvimTreeFocus <CR>", "Focus Tree"},
+        e = { ":NvimTreeFocus <CR>", "Focus Tree" },
         ll = { require("lsp_lines").toggle, "Toggle lsp lines" },
         x = { ":bd <CR>", "Close current" },
     },
     ["<C-n>"] = { ":NvimTreeToggle <CR>", "Toggle Tree" },
-    ["<Tab>"] = { ":BufferLineCycleNext <CR>", "Cycle next tab", },
-    ["<S-Tab>"] = { ":BufferLineCyclePrev <CR>", "Cycle prev tab" },
+    ["<Tab>"] = { ":bnext <CR>", "Next buffer", },
+    ["<S-Tab>"] = { ":bprev <CR>", "Prev buffer" },
 })
