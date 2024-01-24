@@ -42,4 +42,5 @@ wk.register({
 
 wk.register({
   ["<A-i>"] = { "<cmd> ToggleTerm direction=float <CR>", "Toggle floating terminal" },
+  ["<C-x>"] = { vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true), "Escape terminal mode" },
 }, { mode = "t" })

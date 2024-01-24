@@ -13,14 +13,13 @@ if not vim.loop.fs_stat(lazypath) then
 end
 opt.rtp:prepend(lazypath)
 
+-- Speeds up stuff aparently
 g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1
-
 opt.lazyredraw = true
+
 opt.showmatch = true
-
 opt.showmode = false
-
 opt.relativenumber = true
 
 opt.clipboard = "unnamedplus"
