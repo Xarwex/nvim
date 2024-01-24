@@ -17,6 +17,7 @@ g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1
 
 opt.lazyredraw = true
+opt.showmatch = true
 
 opt.showmode = false
 
@@ -42,7 +43,7 @@ opt.numberwidth = 2
 opt.ruler = false
 
 -- disable nvim intro
-opt.shortmess:append "sI"
+opt.shortmess:append("sI")
 
 opt.signcolumn = "yes"
 opt.splitbelow = true
@@ -56,16 +57,16 @@ opt.updatetime = 250
 
 -- go to previous/next line with h,l,left arrow and right arrow
 -- when cursor reaches end/beginning of line
-opt.whichwrap:append "<>[]hl"
+opt.whichwrap:append("<>[]hl")
 
 -- only show the tabline if there are at least to pages
 -- opt.showtabline = 1
 
 g.mapleader = " "
-local plugins = require "plugins"
+local plugins = require("plugins")
 
 require("lazy").setup(plugins, {})
 
 if not vim.g.vscode then
-  require "mappings"
+  require("mappings")
 end
