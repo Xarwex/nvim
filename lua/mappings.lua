@@ -39,3 +39,7 @@ wk.register({
 	["<S-Tab>"] = { ":bprev <CR>", "Prev buffer" },
 	["<A-i>"] = { ":ToggleTerm direction=float <CR>", "Toggle floating terminal" },
 })
+
+wk.register({
+	["<A-i>"] = { "<cmd> ToggleTerm direction=float <CR>", "Toggle floating terminal" },
+}, { mode = "t" })
