@@ -4,11 +4,10 @@ return {
 		"williamboman/mason.nvim",
 	},
 	opts = {
-		ensure_installed = { "lua_ls", "rust_analyzer" },
+		ensure_installed = { "lua_ls", "rust_analyzer", "ruff_lsp" },
 	},
 	config = function(_, opts)
 		require("mason-lspconfig").setup(opts)
 	end,
 	cond = not vim.g.vscode,
 }
-
