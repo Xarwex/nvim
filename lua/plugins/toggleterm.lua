@@ -11,7 +11,7 @@ return {
 			-- end
 			highlights = {
 				FloatBorder = {
-					guifg = require("nightfox.palette").load("terafox").sel0,
+					guifg = require("nightfox.palette").load("terafox").orange.dim,
 					-- guifg = "#293e40"
 				},
 			},
