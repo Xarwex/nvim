@@ -11,18 +11,21 @@
     flake-utils.lib.eachDefaultSystem
       (system:
         let
-          overlays = [ neovim-nightly-overlay.overlay ];
-          pkgs = import nixpkgs {
-            overlays = overlays;
-            system = system;
-          };
+          name = "nixvim";
+          src = ./.;
+          pkgs = nixpkgs.legacyPackages.${system};
         in
         {
-          devShell = with pkgs; pkgs.mkShell {
-            shellHook = ''
-              ln -s $(pwd) ~/.config/nixvim
-              export NVIM_APPNAME=nixvim
-            '';
-          };
+          packages.default = pkgs.stdenv.mkDerivation {
+              inherit name src;
+              installPhase = ''
+                mkdir $out
+                echo $src
+                echo $out
+                cp -r $src $out
+                ln -s ~/.config/nixvim $out
+                export NVIM_APPNAME=nixvim
+              '';
+            };
         });
 }
