@@ -1,5 +1,5 @@
 {
-  description = "My nvim flake";
+  description = "Nixvim";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -11,21 +11,20 @@
     flake-utils.lib.eachDefaultSystem
       (system:
         let
-          name = "nixvim";
-          src = ./.;
-          pkgs = nixpkgs.legacyPackages.${system};
+          overlays = [ neovim-nightly-overlay.overlay ];
+          pkgs = import nixpkgs {
+            overlays = overlays;
+            system = system;
+          };
         in
         {
-          packages.default = pkgs.stdenv.mkDerivation {
-              inherit name src;
-              installPhase = ''
-                mkdir $out
-                echo $src
-                echo $out
-                cp -r $src $out
-                ln -s ~/.config/nixvim $out
-                export NVIM_APPNAME=nixvim
-              '';
-            };
+          packages.default = with pkgs; pkgs.mkShell {
+            buildInputs = [ neovim-nightly ];
+
+            shellHook = ''
+              ln -s $(pwd) ~/.config/nixvim
+              export NVIM_APPNAME=nixvim
+            '';
+          };
         });
 }
