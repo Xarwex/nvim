@@ -38,7 +38,18 @@ wk.register({
 	["<Tab>"] = { ":bnext <CR>", "Next buffer" },
 	["<S-Tab>"] = { ":bprev <CR>", "Prev buffer" },
 	["<A-i>"] = { ":ToggleTerm direction=float <CR>", "Toggle floating terminal" },
+    ["<leader>/"] = {
+      "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
+      "Toggle comment",
+    },
 })
+
+wk.register({
+    ["<leader>/"] = {
+      "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
+      "Toggle comment",
+    },
+}, { mode = "v" })
 
 wk.register({
 	["<A-i>"] = { "<cmd> ToggleTerm direction=float <CR>", "Toggle floating terminal" },

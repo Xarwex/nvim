@@ -18,4 +18,5 @@ return {
       root_dir = lspconfig.util.root_pattern('.git')
     })
   end,
+  cond = not vim.g.vscode
 }
