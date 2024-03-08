@@ -62,6 +62,7 @@ opt.whichwrap:append("<>[]hl")
 -- opt.showtabline = 1
 
 g.mapleader = " "
+
 local plugins = require("plugins")
 
 require("lazy").setup(plugins, {})
