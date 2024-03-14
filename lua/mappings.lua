@@ -18,6 +18,7 @@ wk.register({
       o = { ":Telescope oldfiles <CR>", "Old files" },
       z = { ":Telescope current_buffer_fuzzy_find <CR>", "Fuzzy find in current buffer" },
       c = { ":Telescope commands <CR>", "Commands" },
+      d = { ":Telescope diagnostics <CR>", "Diagnostics" }
     },
     w = { ":HopWord <CR>", "HopWord" },
     g = {
@@ -25,7 +26,7 @@ wk.register({
       r = { ":Telescope lsp_references <CR>", "LSP references" },
       d = { ":Telescope lsp_definitions <CR>", "LSP definitions" },
     },
-    i = {
+    t = {
       name = "git",
       t = { ":Telescope git_status <CR>", "Git status" },
       m = { ":Telescope git_commits <CR>", "Git commits" },
@@ -33,6 +34,12 @@ wk.register({
     e = { ":NvimTreeFocus <CR>", "Focus Tree" },
     ll = { require("lsp_lines").toggle, "Toggle lsp lines" },
     x = { ":Bdelete <CR>", "Close current" },
+    ca = { ":lua vim.lsp.buf.code_action()<CR>", "Code actions" },
+    i = {
+      name = "tree",
+      c = { ":NvimTreeCollapse<CR>", "Collapse" },
+      f = { ":NvimTreeFindFile<CR>", "Find file" },
+    }
   },
   ["<C-n>"] = { ":NvimTreeToggle <CR>", "Toggle Tree" },
   ["<Tab>"] = { ":bnext <CR>", "Next buffer" },
