@@ -25,6 +25,7 @@ wk.register({
       name = "go",
       r = { ":Telescope lsp_references <CR>", "LSP references" },
       d = { ":Telescope lsp_definitions <CR>", "LSP definitions" },
+      b = { ":Gitsigns toggle_current_line_blame <CR>", "Toggle git blame" }
     },
     t = {
       name = "git",
@@ -41,6 +42,7 @@ wk.register({
       f = { ":NvimTreeFindFile<CR>", "Find file" },
     }
   },
+  ["ra"] = { ":lua vim.lsp.buf.rename() <CR>", "Rename" },
   ["<C-n>"] = { ":NvimTreeToggle <CR>", "Toggle Tree" },
   ["<Tab>"] = { ":bnext <CR>", "Next buffer" },
   ["<S-Tab>"] = { ":bprev <CR>", "Prev buffer" },
