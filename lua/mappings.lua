@@ -1,5 +1,4 @@
 local wk = require("which-key")
-
 wk.register({
   ["<Esc>"] = { ":noh <CR>", "Clear highlights" },
   ["<C-h>"] = { "<C-w>h", "Window left" },
@@ -25,12 +24,13 @@ wk.register({
       name = "go",
       r = { ":Telescope lsp_references <CR>", "LSP references" },
       d = { ":Telescope lsp_definitions <CR>", "LSP definitions" },
-      b = { ":Gitsigns toggle_current_line_blame <CR>", "Toggle git blame" }
     },
     t = {
       name = "git",
       t = { ":Telescope git_status <CR>", "Git status" },
       m = { ":Telescope git_commits <CR>", "Git commits" },
+      b = { ":Gitsigns toggle_current_line_blame <CR>", "Toggle git blame" },
+      d = { ":Gitsigns toggle_deleted <CR>", "Toggle deleted" },
     },
     e = { ":NvimTreeFocus <CR>", "Focus Tree" },
     ll = { require("lsp_lines").toggle, "Toggle lsp lines" },
@@ -51,7 +51,9 @@ wk.register({
     "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
     "Toggle comment",
   },
-  ["K"] = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Hover" },
+  ["K"] = { ":lua vim.lsp.buf.hover() <CR>", "Hover" },
+  ["]c"] = { ":Gitsigns next_hunk <CR>", "Next hunk" },
+  ["[c"] = { ":Gitsigns prev_hunk <CR>", "Previous hunk" },
 })
 
 wk.register({
