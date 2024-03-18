@@ -22,8 +22,6 @@ opt.showmatch = true
 opt.showmode = false
 opt.relativenumber = true
 
-opt.clipboard = "unnamedplus"
-
 -- Indenting
 opt.expandtab = true
 opt.shiftwidth = 2
@@ -68,5 +66,6 @@ local plugins = require("plugins")
 require("lazy").setup(plugins, {})
 
 if not vim.g.vscode then
+  opt.clipboard = "unnamedplus"
   require("mappings")
 end
