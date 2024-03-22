@@ -31,6 +31,7 @@ wk.register({
       m = { ":Telescope git_commits <CR>", "Git commits" },
       b = { ":Gitsigns toggle_current_line_blame <CR>", "Toggle git blame" },
       d = { ":Gitsigns toggle_deleted <CR>", "Toggle deleted" },
+      rh = { ":Gitsigns reset_hunk <CR>", "Reset hunk" },
     },
     e = { ":NvimTreeFocus <CR>", "Focus Tree" },
     ll = { require("lsp_lines").toggle, "Toggle lsp lines" },
@@ -48,7 +49,7 @@ wk.register({
   ["<S-Tab>"] = { ":bprev <CR>", "Prev buffer" },
   ["<A-i>"] = { ":ToggleTerm direction=float <CR>", "Toggle floating terminal" },
   ["<leader>/"] = {
-    "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
+    "<Plug>(comment_toggle_linewise_current)",
     "Toggle comment",
   },
   ["K"] = { ":lua vim.lsp.buf.hover() <CR>", "Hover" },
@@ -58,7 +59,7 @@ wk.register({
 
 wk.register({
   ["<leader>/"] = {
-    "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
+    "<Plug>(comment_toggle_linewise_visual)",
     "Toggle comment",
   },
 }, { mode = "v" })
