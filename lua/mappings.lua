@@ -31,7 +31,6 @@ wk.register({
       m = { ":Telescope git_commits <CR>", "Git commits" },
       b = { ":Gitsigns toggle_current_line_blame <CR>", "Toggle git blame" },
       d = { ":Gitsigns toggle_deleted <CR>", "Toggle deleted" },
-      rh = { ":Gitsigns reset_hunk <CR>", "Reset hunk" },
     },
     e = { ":NvimTreeFocus <CR>", "Focus Tree" },
     ll = { require("lsp_lines").toggle, "Toggle lsp lines" },
@@ -61,6 +60,10 @@ wk.register({
   ["<leader>/"] = {
     "<Plug>(comment_toggle_linewise_visual)",
     "Toggle comment",
+  },
+  r = {
+    name = "reset",
+    h = { ":Gitsigns reset_hunk <CR>", "Hunk" },
   },
 }, { mode = "v" })
 
