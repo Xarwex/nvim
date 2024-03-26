@@ -14,6 +14,19 @@ return {
       function(server_name)
         require("lspconfig")[server_name].setup({})
       end,
+      ["pylsp"] = function()
+        require("lspconfig").pylsp.setup {
+          settings = {
+            pylsp = {
+              plugins = {
+                pycodestyle = {
+                  ignore = { 'E501' }
+                }
+              }
+            }
+          }
+        }
+      end,
     })
   end,
   cond = not vim.g.vscode,

@@ -1,10 +1,11 @@
 local wk = require("which-key")
 wk.register({
   ["<Esc>"] = { ":noh <CR>", "Clear highlights" },
-  ["<C-h>"] = { "<C-w>h", "Window left" },
-  ["<C-l>"] = { "<C-w>l", "Window right" },
-  ["<C-j>"] = { "<C-w>j", "Window down" },
-  ["<C-k>"] = { "<C-w>k", "Window up" },
+  ["<C-h>"] = { require("smart-splits").move_cursor_left, "Window left" },
+  ["<C-l>"] = { require("smart-splits").move_cursor_right, "Window right" },
+  ["<C-j>"] = { require("smart-splits").move_cursor_down, "Window down" },
+  ["<C-k>"] = { require("smart-splits").move_cursor_up, "Window up" },
+
   ["<leader>"] = {
     f = {
       name = "telescope",
