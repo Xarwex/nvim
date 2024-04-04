@@ -18,13 +18,17 @@ wk.register({
       o = { ":Telescope oldfiles <CR>", "Old files" },
       z = { ":Telescope current_buffer_fuzzy_find <CR>", "Fuzzy find in current buffer" },
       c = { ":Telescope commands <CR>", "Commands" },
-      d = { ":Telescope diagnostics <CR>", "Diagnostics" }
+      d = { ":Telescope diagnostics <CR>", "Diagnostics" },
+      r = { ":Telescope resume <CR>", "Resume" },
+      p = { ":Telescope pickers <CR>", "Pickers" },
+
     },
     w = { ":HopWord <CR>", "HopWord" },
     g = {
       name = "go",
       r = { ":Telescope lsp_references <CR>", "LSP references" },
       d = { ":Telescope lsp_definitions <CR>", "LSP definitions" },
+      D = { ":Telescope lsp_type_definitions <CR>", "LSP type definitions" },
     },
     t = {
       name = "git",
@@ -55,6 +59,11 @@ wk.register({
   ["K"] = { ":lua vim.lsp.buf.hover() <CR>", "Hover" },
   ["]c"] = { ":Gitsigns next_hunk <CR>", "Next hunk" },
   ["[c"] = { ":Gitsigns prev_hunk <CR>", "Previous hunk" },
+  ["]g"] = { function() vim.diagnostic.goto_next({ wrap = true }) end, "Next diagnostic" },
+  ["[g"] = { function() vim.diagnostic.goto_prev({ wrap = true }) end, "Previous diagnostic" },
+  ["]e"] = { function() vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.ERROR, wrap = true }) end, "Next error" },
+  ["[e"] = { function() vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.ERROR, wrap = true }) end, "Previous error" },
+
 })
 
 wk.register({
@@ -70,5 +79,5 @@ wk.register({
 
 wk.register({
   ["<A-i>"] = { "<cmd> ToggleTerm direction=float <CR>", "Toggle floating terminal" },
-  ["<C-x>"] = { vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true), "Escape terminal mode" },
+  ["<C-x>"] = { function() vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true) end, "Escape terminal mode" },
 }, { mode = "t" })

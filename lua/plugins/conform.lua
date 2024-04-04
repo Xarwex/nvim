@@ -20,7 +20,7 @@ return {
     -- Define your formatters
     formatters_by_ft = {
       lua = { "stylua" },
-      python = { "isort", "black" },
+      python = { "ruff" },
       rust = { "rustfmt" },
     },
     format_on_save = function(bufnr)
