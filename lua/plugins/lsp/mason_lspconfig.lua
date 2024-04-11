@@ -20,7 +20,7 @@ return {
             pylsp = {
               plugins = {
                 pycodestyle = {
-                  ignore = { 'E501', 'E302' }
+                  enabled = false, -- using ruff instead
                 }
               }
             }

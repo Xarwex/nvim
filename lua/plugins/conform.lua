@@ -20,7 +20,7 @@ return {
     -- Define your formatters
     formatters_by_ft = {
       lua = { "stylua" },
-      python = { "ruff" },
+      python = { "ruff_fix", "ruff_format" },
       rust = { "rustfmt" },
     },
     format_on_save = function(bufnr)
@@ -48,7 +48,9 @@ return {
         prepend_args = { "-i", "2" },
       },
       rustfmt = {
-        args = { "--edition", "2021" }
+        options = {
+          default_edition = "2021",
+        },
       }
     },
   },
