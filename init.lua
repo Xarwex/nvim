@@ -1,5 +1,6 @@
 local opt = vim.opt
 local g = vim.g
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -56,7 +57,7 @@ opt.updatetime = 250
 -- when cursor reaches end/beginning of line
 opt.whichwrap:append("<>[]hl")
 
--- only show the tabline if there are at least to pages
+-- only show the tabline if there are at least two pages
 -- opt.showtabline = 1
 
 g.mapleader = " "
@@ -65,7 +66,23 @@ local plugins = require("plugins")
 
 require("lazy").setup(plugins, {})
 
+opt.clipboard = "unnamedplus"
+
+if vim.fn.has("wsl") then
+  g.clipboard = {
+    name = "win32yank-wsl",
+    copy = {
+      ["+"] = "win32yank.exe -i --crlf",
+      ["*"] = "win32yank.exe -i --crlf",
+    },
+    paste = {
+      ["+"] = "win32yank.exe -o --lf",
+      ["*"] = "win32yank.exe -o --lf",
+    },
+    cache_enabled = true,
+  }
+end
+
 if not vim.g.vscode then
-  opt.clipboard = "unnamedplus"
   require("mappings")
 end
