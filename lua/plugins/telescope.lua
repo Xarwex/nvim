@@ -3,10 +3,13 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim",
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-    "nvim-telescope/telescope-live-grep-args.nvim", },
+    "nvim-telescope/telescope-live-grep-args.nvim",
+    "nvim-treesitter/nvim-treesitter",
+  },
   cmd = "Telescope",
   opts = {
     defaults = {
+      layout_strategy = "vertical",
       cache_picker = {
         num_pickers = 30,
         ignore_empty_prompt = true,
