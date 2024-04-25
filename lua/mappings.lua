@@ -1,10 +1,12 @@
-local wk = require("which-key")
+local wk = require "which-key"
+local ss = require "smart-splits"
+
 wk.register({
   ["<Esc>"] = { ":noh <CR>", "Clear highlights" },
-  ["<C-h>"] = { require("smart-splits").move_cursor_left, "Window left" },
-  ["<C-l>"] = { require("smart-splits").move_cursor_right, "Window right" },
-  ["<C-j>"] = { require("smart-splits").move_cursor_down, "Window down" },
-  ["<C-k>"] = { require("smart-splits").move_cursor_up, "Window up" },
+  ["<C-h>"] = { ss.move_cursor_left, "Window left" },
+  ["<C-l>"] = { ss.move_cursor_right, "Window right" },
+  ["<C-j>"] = { ss.move_cursor_down, "Window down" },
+  ["<C-k>"] = { ss.move_cursor_up, "Window up" },
 
   ["<leader>"] = {
     f = {
