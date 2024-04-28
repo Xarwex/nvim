@@ -6,9 +6,9 @@ return {
     library = {
       plugins = { "nvim-treesitter", "plenary.nvim", "telescope.nvim" },
     },
-    override = function(root_dir, options)
-      options.enabled = true
-      options.plugins = true
+    override = function(_, opts)
+      opts.enabled = true
+      opts.plugins = true
     end,
   },
   config = function(_, opts)
