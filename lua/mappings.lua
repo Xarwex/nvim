@@ -47,6 +47,10 @@ wk.register({
       name = "tree",
       c = { ":NvimTreeCollapse<CR>", "Collapse" },
       f = { ":NvimTreeFindFile<CR>", "Find file" },
+    },
+    b = {
+      name = "buffer",
+      x = { ":%bd<CR>", "Delete all buffers" },
     }
   },
   ["ra"] = { ":lua vim.lsp.buf.rename() <CR>", "Rename" },
