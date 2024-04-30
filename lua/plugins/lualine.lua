@@ -9,7 +9,10 @@ local tbl = {
 
 return {
   "nvim-lualine/lualine.nvim",
-  dependencies = { "nvim-tree/nvim-web-devicons" },
+  dependencies = {
+    "nvim-tree/nvim-web-devicons",
+    "arkav/lualine-lsp-progress"
+  },
   opts = function()
     return {
       options = {
@@ -20,8 +23,8 @@ return {
           "NvimTree",
           "toggleterm",
         },
-        component_separators = { left = " ", right = " " },
-        section_separators = { left = " ", right = " " },
+        component_separators = { left = "", right = "" },
+        section_separators = { left = "", right = "" },
       },
       -- extensions = { "nvim-tree", "toggleterm" },
       sections = {
@@ -31,7 +34,6 @@ return {
           {
             "mode",
             fmt = function(mode, _)
-              -- return mode
               if not tbl[mode] then
                 return mode
               end
@@ -48,6 +50,9 @@ return {
           },
           "diagnostics",
           "diff",
+          {
+            "lsp_progress",
+          }
         },
         lualine_x = {
           {

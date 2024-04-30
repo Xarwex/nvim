@@ -22,6 +22,8 @@ return {
       lua = { "stylua" },
       python = { "ruff_fix", "ruff_format" },
       rust = { "rustfmt" },
+      hcl = { "hclfmt" },
+      terraform = { "terraform_fmt" }
     },
     format_on_save = function(bufnr)
       if slow_format_filetypes[vim.bo[bufnr].filetype] then
@@ -51,7 +53,10 @@ return {
         options = {
           default_edition = "2021",
         },
-      }
+      },
+      hclfmt = {
+        command = "hclfmt"
+      },
     },
   },
   init = function()
