@@ -12,5 +12,6 @@ return {
     require("nightfox").setup(opts)
     vim.cmd.colorscheme("terafox")
   end,
+  enabled = false,
   cond = not vim.g.vscode,
 }
