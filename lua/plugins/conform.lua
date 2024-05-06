@@ -23,7 +23,8 @@ return {
       python = { "ruff_fix", "ruff_format" },
       rust = { "rustfmt" },
       hcl = { "hclfmt" },
-      terraform = { "terraform_fmt" }
+      terraform = { "terraform_fmt" },
+      nix = { "nixfmt" }
     },
     format_on_save = function(bufnr)
       if slow_format_filetypes[vim.bo[bufnr].filetype] then
