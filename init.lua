@@ -68,7 +68,7 @@ require("lazy").setup(plugins, {})
 
 opt.clipboard = "unnamedplus"
 
-if vim.fn.has("wsl") then
+if vim.fn.has("wsl") == 1 then
   g.clipboard = {
     name = "win32yank-wsl",
     copy = {
