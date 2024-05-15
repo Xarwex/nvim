@@ -14,6 +14,24 @@ return {
       function(server_name)
         require("lspconfig")[server_name].setup({})
       end,
+
+      -- ["pyright"] = function()
+      -- require("lspconfig").pyright.setup {
+      --   pyright = {
+      --     settings = {
+      --       pyright = {
+      --         disableOrganizeImports = true,   -- Using Ruff
+      --       },
+      --       python = {
+      --         analysis = {
+      --           ignore = { '*' },           -- Using Ruff
+      --           typeCheckingMode = 'off',   -- Using mypy
+      --         },
+      --       },
+      --     },
+      --   }
+      -- }
+
       ["pylsp"] = function()
         require("lspconfig").pylsp.setup {
           settings = {

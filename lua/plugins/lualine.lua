@@ -37,10 +37,13 @@ return {
               if not tbl[mode] then
                 return mode
               end
-              return "[" .. tbl[mode] .. "]"
+              return " " .. tbl[mode] -- cheat out the padding a bit
             end,
           },
-          "branch",
+          {
+            "branch",
+            icons_enabled = false,
+          },
           {
             "buffers",
             hide_filename_extension = true,
