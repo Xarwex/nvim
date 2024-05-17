@@ -1,5 +1,5 @@
 return {
-  "rust-lang/rust.vim",
-  ft = "rust",
-  cond = not vim.g.vscode,
+	"rust-lang/rust.vim",
+	ft = "rust",
+	cond = not vim.g.vscode,
 }

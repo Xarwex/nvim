@@ -1,4 +1,4 @@
 return {
-    "mfussenegger/nvim-lint",
-    cond = not vim.g.vscode
+	"mfussenegger/nvim-lint",
+	cond = not vim.g.vscode,
 }

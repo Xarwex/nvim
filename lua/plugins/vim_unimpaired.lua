@@ -1,6 +1,5 @@
 return {
-  "tpope/vim-unimpaired",
-  keys = { "[", "]" },
-  enabled = false
+	"tpope/vim-unimpaired",
+	keys = { "[", "]" },
+	enabled = false,
 }
-
