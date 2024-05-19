@@ -23,6 +23,7 @@ wk.register({
 			d = { ":Telescope diagnostics <CR>", "Diagnostics" },
 			r = { ":Telescope resume <CR>", "Resume" },
 			p = { ":Telescope pickers <CR>", "Pickers" },
+			n = { ":Telescope noice <CR>", "Noice" },
 		},
 		w = { ":HopWord <CR>", "HopWord" },
 		g = {

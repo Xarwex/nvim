@@ -17,7 +17,9 @@ opt.rtp:prepend(lazypath)
 -- Speeds up stuff aparently
 g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1
-opt.lazyredraw = true
+
+-- Figure this out later, maybe should be set to true
+opt.lazyredraw = false
 
 opt.showmatch = true
 opt.showmode = false

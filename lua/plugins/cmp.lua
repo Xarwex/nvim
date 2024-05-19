@@ -31,28 +31,33 @@ return {
 
 		-- cmp sources plugins
 		{
-			"saadparwaiz1/cmp_luasnip",
-			"hrsh7th/cmp-nvim-lua",
+			-- "saadparwaiz1/cmp_luasnip",
+			-- "hrsh7th/cmp-nvim-lua",
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-buffer",
-			"hrsh7th/cmp-path",
+			-- "hrsh7th/cmp-path",
 		},
 	},
 
 	config = function()
 		local cmp = require("cmp")
 		cmp.setup({
+			completion = {
+				completeopt = "menu,menuone,noinsert",
+			},
 			snippet = {
 				expand = function(args)
 					require("luasnip").lsp_expand(args.body)
 				end,
 			},
 			sources = {
-				{ name = "nvim_lsp" },
-				{ name = "luasnip" },
-				-- { name = "buffer" },
-				-- { name = "nvim_lua" },
-				-- { name = "path" },
+				{
+					name = "nvim_lsp",
+					entry_filter = function(entry)
+						return cmp.lsp.CompletionItemKind.Snippet ~= entry:get_kind()
+					end,
+				},
+				{ name = "buffer" },
 			},
 			mapping = {
 

@@ -27,7 +27,7 @@ return {
 				auto_quoting = true,
 			},
 		},
-		extensions_list = { "live_grep_args", "fzf" },
+		extensions_list = { "live_grep_args", "fzf", "noice" },
 	},
 	config = function(_, opts)
 		local telescope = require("telescope")
