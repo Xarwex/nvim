@@ -1,5 +1,6 @@
 local opt = vim.opt
 local g = vim.g
+local lsp = vim.lsp
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -63,6 +64,8 @@ opt.whichwrap:append("<>[]hl")
 -- opt.showtabline = 1
 
 g.mapleader = " "
+
+lsp.inlay_hint.enable()
 
 local plugins = require("plugins")
 

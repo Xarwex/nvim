@@ -21,7 +21,7 @@ return {
 		formatters_by_ft = {
 			lua = { "stylua" },
 			python = { "ruff_fix", "ruff_format" },
-			rust = { "rustfmt" },
+			-- rust = { "rustfmt" },
 			hcl = { "hclfmt" },
 			terraform = { "terraform_fmt" },
 			nix = { "nixfmt" },
