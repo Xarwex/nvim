@@ -31,11 +31,11 @@ return {
 			},
 			cmdline_popup = {
 				position = {
-					row = 5,
+					row = "50%",
 					col = "50%",
 				},
 				size = {
-					width = 60,
+					width = "60%",
 					height = "auto",
 				},
 			},
