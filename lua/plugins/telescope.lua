@@ -11,7 +11,7 @@ return {
 	opts = {
 		defaults = {
 			file_ignore_patterns = { "^.rustup/" },
-			layout_strategy = "vertical",
+			layout_strategy = "horizontal",
 			cache_picker = {
 				num_pickers = 30,
 				ignore_empty_prompt = true,
@@ -26,6 +26,7 @@ return {
 			},
 			live_grep_args = {
 				auto_quoting = true,
+				layout_strategy = "vertical",
 			},
 		},
 		extensions_list = { "live_grep_args", "fzf", "noice", "ui-select" },
