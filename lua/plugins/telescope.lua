@@ -5,6 +5,7 @@ return {
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 		"nvim-telescope/telescope-live-grep-args.nvim",
 		"nvim-treesitter/nvim-treesitter",
+		"nvim-telescope/telescope-ui-select.nvim",
 	},
 	cmd = "Telescope",
 	opts = {
@@ -27,7 +28,7 @@ return {
 				auto_quoting = true,
 			},
 		},
-		extensions_list = { "live_grep_args", "fzf", "noice" },
+		extensions_list = { "live_grep_args", "fzf", "noice", "ui-select" },
 	},
 	config = function(_, opts)
 		local telescope = require("telescope")
