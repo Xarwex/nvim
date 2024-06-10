@@ -57,7 +57,6 @@ wk.register({
 	["<C-n>"] = { ":NvimTreeToggle <CR>", "Toggle Tree" },
 	["<Tab>"] = { ":bnext <CR>", "Next buffer" },
 	["<S-Tab>"] = { ":bprev <CR>", "Prev buffer" },
-	["<A-i>"] = { ":ToggleTerm direction=float <CR>", "Toggle floating terminal" },
 	["<leader>/"] = {
 		"<Plug>(comment_toggle_linewise_current)",
 		"Toggle comment",
