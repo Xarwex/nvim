@@ -2,7 +2,7 @@ return {
 	"rcarriga/nvim-notify",
 	opts = {
 		background_colour = "#000000",
-		render = "minimal",
+		render = "default",
 		stages = "no_animation",
 	},
 }

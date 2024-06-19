@@ -88,6 +88,8 @@ wk.register({
 		end,
 		"Previous error",
 	},
+	["[q"] = { ":cn", "Next qf entry" },
+	["]q"] = { ":cp", "Prev qf entry" },
 })
 
 wk.register({
