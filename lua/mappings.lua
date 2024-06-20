@@ -1,5 +1,6 @@
 local wk = require("which-key")
 local ss = require("smart-splits")
+local telescope_builtin = require("telescope.builtin")
 
 wk.register({
 	["<Esc>"] = { ":noh <CR>", "Clear highlights" },
@@ -21,6 +22,12 @@ wk.register({
 			z = { ":Telescope current_buffer_fuzzy_find <CR>", "Fuzzy find in current buffer" },
 			c = { ":Telescope commands <CR>", "Commands" },
 			d = { ":Telescope diagnostics <CR>", "Diagnostics" },
+			e = {
+				function()
+					telescope_builtin.diagnostics({ severity = "ERROR" })
+				end,
+				"Error diagnostics",
+			},
 			r = { ":Telescope resume <CR>", "Resume" },
 			p = { ":Telescope pickers <CR>", "Pickers" },
 			n = { ":Telescope noice <CR>", "Noice" },
