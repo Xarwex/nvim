@@ -62,7 +62,8 @@ return {
 					},
 					{
 						"filename",
-						path = 1, -- relative path
+						path = 1,
+						shorting_target = 20,
 						symbols = {
 							modified = "",
 							readonly = "[ᛟ]",

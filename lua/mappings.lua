@@ -58,6 +58,7 @@ wk.register({
 		b = {
 			name = "buffer",
 			x = { ":%bd<CR>", "Delete all buffers" },
+			o = { ":%bd|e#|bd#<CR>", "Delete all other buffers" },
 		},
 	},
 	["ra"] = { ":lua vim.lsp.buf.rename() <CR>", "Rename" },
