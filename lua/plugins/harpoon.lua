@@ -28,49 +28,50 @@ return {
 		-- 		:find()
 		-- end
 
-		wk.register({
-			["<leader>"] = {
-				h = {
-					name = "harpoon",
-					a = {
-						function()
-							harpoon:list():add()
-						end,
-						"Add buffer",
-					},
-					r = {
-						function()
-							harpoon:list():remove()
-						end,
-						"Remove buffer",
-					},
-					l = {
-						function()
-							harpoon.ui:toggle_quick_menu(harpoon:list())
-						end,
-						"Show list",
-					},
-					j = {
-						function()
-							harpoon:list():next()
-						end,
-						"Next buffer",
-					},
-					k = {
-						function()
-							harpoon:list():prev()
-						end,
-						"Prev buffer",
-					},
-					x = {
-						function()
-							harpoon:list():clear()
-						end,
-						"Clear list",
-					},
-				},
-			},
-		})
+		-- 	wk.register({
+		-- 		["<leader>"] = {
+		-- 			h = {
+		-- 				name = "harpoon",
+		-- 				a = {
+		-- 					function()
+		-- 						harpoon:list():add()
+		-- 					end,
+		-- 					"Add buffer",
+		-- 				},
+		-- 				r = {
+		-- 					function()
+		-- 						harpoon:list():remove()
+		-- 					end,
+		-- 					"Remove buffer",
+		-- 				},
+		-- 				l = {
+		-- 					function()
+		-- 						harpoon.ui:toggle_quick_menu(harpoon:list())
+		-- 					end,
+		-- 					"Show list",
+		-- 				},
+		-- 				j = {
+		-- 					function()
+		-- 						harpoon:list():next()
+		-- 					end,
+		-- 					"Next buffer",
+		-- 				},
+		-- 				k = {
+		-- 					function()
+		-- 						harpoon:list():prev()
+		-- 					end,
+		-- 					"Prev buffer",
+		-- 				},
+		-- 				x = {
+		-- 					function()
+		-- 						harpoon:list():clear()
+		-- 					end,
+		-- 					"Clear list",
+		-- 				},
+		-- 			},
+		-- 		},
+		-- 	})
 	end,
+	enabled = false,
 	cond = not vim.g.vscode,
 }

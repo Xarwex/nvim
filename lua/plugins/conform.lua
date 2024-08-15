@@ -25,6 +25,7 @@ return {
 			hcl = { "hclfmt" },
 			terraform = { "terraform_fmt" },
 			nix = { "nixfmt" },
+			toml = { "taplo" },
 		},
 		format_on_save = function(bufnr)
 			if slow_format_filetypes[vim.bo[bufnr].filetype] then

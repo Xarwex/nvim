@@ -2,121 +2,114 @@ local wk = require("which-key")
 local ss = require("smart-splits")
 local telescope_builtin = require("telescope.builtin")
 
-wk.register({
-	["<Esc>"] = { ":noh <CR>", "Clear highlights" },
-	["<C-h>"] = { ss.move_cursor_left, "Window left" },
-	["<C-l>"] = { ss.move_cursor_right, "Window right" },
-	["<C-j>"] = { ss.move_cursor_down, "Window down" },
-	["<C-k>"] = { ss.move_cursor_up, "Window up" },
-
-	["<leader>"] = {
-		f = {
-			name = "telescope",
-			t = { ":Telescope <CR>", "Telescope" },
-			f = { ":Telescope find_files <CR>", "Find files" },
-			a = { ":Telescope find_files follow=true no_ignore=true hidden=true <CR>", "Find in all files" },
-			w = { ":Telescope live_grep_args <CR>", "Live grep" },
-			b = { ":Telescope buffers <CR>", "Buffers" },
-			h = { ":Telescope help_tags <CR>", "Help" },
-			o = { ":Telescope oldfiles <CR>", "Old files" },
-			z = { ":Telescope current_buffer_fuzzy_find <CR>", "Fuzzy find in current buffer" },
-			c = { ":Telescope commands <CR>", "Commands" },
-			d = { ":Telescope diagnostics <CR>", "Diagnostics" },
-			e = {
-				function()
-					telescope_builtin.diagnostics({ severity = "ERROR" })
-				end,
-				"Error diagnostics",
-			},
-			r = { ":Telescope resume <CR>", "Resume" },
-			p = { ":Telescope pickers <CR>", "Pickers" },
-			n = { ":Telescope noice <CR>", "Noice" },
+wk.add({
+	{ "<Esc>", ":noh <CR>", desc = "Clear highlights" },
+	{ "<C-h>", ss.move_cursor_left, desc = "Window left" },
+	{ "<C-l>", ss.move_cursor_right, desc = "Window right" },
+	{ "<C-j>", ss.move_cursor_down, desc = "Window down" },
+	{ "<C-k>", ss.move_cursor_up, desc = "Window up" },
+	{
+		group = "telescope",
+		{ "<leader>ft", ":Telescope <CR>", desc = "Telescope" },
+		{ "<leader>ff", ":Telescope find_files <CR>", desc = "Find files" },
+		{
+			"<leader>fa",
+			":Telescope find_files follow=true no_ignore=true hidden=true <CR>",
+			desc = "Find in all files",
 		},
-		w = { ":HopWord <CR>", "HopWord" },
-		g = {
-			name = "go",
-			r = { ":Telescope lsp_references <CR>", "LSP references" },
-			d = { ":Telescope lsp_definitions <CR>", "LSP definitions" },
-			D = { ":Telescope lsp_type_definitions <CR>", "LSP type definitions" },
+		{ "<leader>fw", ":Telescope live_grep_args <CR>", desc = "Live grep" },
+		{ "<leader>fb", ":Telescope buffers <CR>", desc = "Buffers" },
+		{ "<leader>fh", ":Telescope help_tags <CR>", desc = "Help" },
+		{ "<leader>fo", ":Telescope oldfiles <CR>", desc = "Old files" },
+		{ "<leader>fz", ":Telescope current_buffer_fuzzy_find <CR>", desc = "Fuzzy find in current buffer" },
+		{ "<leader>fc", ":Telescope commands <CR>", desc = "Commands" },
+		{ "<leader>fd", ":Telescope diagnostics <CR>", desc = "Diagnostics" },
+		{
+			"<leader>fe",
+			function()
+				telescope_builtin.diagnostics({ severity = "ERROR" })
+			end,
+			desc = "Error diagnostics",
 		},
-		t = {
-			name = "git",
-			t = { ":Telescope git_status <CR>", "Git status" },
-			m = { ":Telescope git_commits <CR>", "Git commits" },
-			b = { ":Gitsigns toggle_current_line_blame <CR>", "Toggle git blame" },
-			d = { ":Gitsigns toggle_deleted <CR>", "Toggle deleted" },
-		},
-		e = { ":NvimTreeFocus <CR>", "Focus Tree" },
-		ll = { require("lsp_lines").toggle, "Toggle lsp lines" },
-		x = { ":Bdelete <CR>", "Close current" },
-		ca = { ":lua vim.lsp.buf.code_action()<CR>", "Code actions" },
-		i = {
-			name = "tree",
-			c = { ":NvimTreeCollapse<CR>", "Collapse" },
-			f = { ":NvimTreeFindFile<CR>", "Find file" },
-		},
-		b = {
-			name = "buffer",
-			x = { ":%bd<CR>", "Delete all buffers" },
-			o = { ":%bd|e#|bd#<CR>", "Delete all other buffers" },
-		},
+		{ "<leader>fr", ":Telescope resume <CR>", desc = "Resume" },
+		{ "<leader>fp", ":Telescope pickers <CR>", desc = "Pickers" },
+		{ "<leader>fn", ":Telescope noice <CR>", desc = "Noice" },
 	},
-	["ra"] = { ":lua vim.lsp.buf.rename() <CR>", "Rename" },
-	["<C-n>"] = { ":NvimTreeToggle <CR>", "Toggle Tree" },
-	["<Tab>"] = { ":bnext <CR>", "Next buffer" },
-	["<S-Tab>"] = { ":bprev <CR>", "Prev buffer" },
-	["<leader>/"] = {
+	{
+		group = "go",
+		{ "<leader>gr", ":Telescope lsp_references <CR>", desc = "LSP references" },
+		{ "<leader>gd", ":Telescope lsp_definitions <CR>", desc = "LSP definitions" },
+		{ "<leader>gD", ":Telescope lsp_type_definitions <CR>", desc = "LSP type definitions" },
+	},
+	{
+		group = "git",
+		{ "<leader>tt", ":Telescope git_status <CR>", desc = "Git status" },
+		{ "<leader>tg", ":Telescope git_commits <CR>", desc = "Git commits" },
+		{ "<leader>tb", ":Gitsigns toggle_current_line_blame <CR>", desc = "Toggle git blame" },
+		{ "<leader>td", ":Gitsigns toggle_deleted <CR>", desc = "Toggle deleted" },
+	},
+	{ "<leader>ll", require("lsp_lines").toggle, desc = "Toggle lsp lines" },
+	{ "<leader>x", ":Bdelete <CR>", desc = "Close current" },
+	{ "<leader>ca", ":lua vim.lsp.buf.code_action()<CR>", desc = "Code actions" },
+	{ "<leader>w", ":HopWord <CR>", desc = "HopWord" },
+	{ "<leader>e", ":NvimTreeFocus <CR>", desc = "Focus Tree" },
+	{
+		group = "tree",
+		{ "<leader>ic", ":NvimTreeCollapse<CR>", desc = "Collapse" },
+		{ "<leader>if", ":NvimTreeFindFile<CR>", desc = "Find file" },
+	},
+	{
+		"<leader>b",
+		group = "buffer",
+		{ "x", ":%bd<CR>", desc = "Delete all buffers" },
+		{ "o", ":%bd|e#|bd#<CR>", desc = "Delete all other buffers" },
+	},
+	{ "<leader>ra", ":lua vim.lsp.buf.rename() <CR>", desc = "Rename" },
+	{ "<C-n>", ":NvimTreeToggle <CR>", desc = "Toggle Tree" },
+	{ "<Tab>", ":bnext <CR>", desc = "Next buffer" },
+	{ "<S-Tab>", ":bprev <CR>", desc = "Prev buffer" },
+	{
+		"<leader>/",
 		"<Plug>(comment_toggle_linewise_current)",
-		"Toggle comment",
+		desc = "Toggle comment",
 	},
-	["K"] = { ":lua vim.lsp.buf.hover() <CR>", "Hover" },
-	["]c"] = { ":Gitsigns next_hunk <CR>", "Next hunk" },
-	["[c"] = { ":Gitsigns prev_hunk <CR>", "Previous hunk" },
-	["]g"] = {
+	{ "K", ":lua vim.lsp.buf.hover() <CR>", desc = "Hover" },
+	{ "]c", ":Gitsigns next_hunk <CR>", desc = "Next hunk" },
+	{ "[c", ":Gitsigns prev_hunk <CR>", desc = "Previous hunk" },
+	{
+		"]g",
 		function()
 			vim.diagnostic.goto_next({ wrap = true })
 		end,
-		"Next diagnostic",
+		desc = "Next diagnostic",
 	},
-	["[g"] = {
+	{
+		"[g",
 		function()
 			vim.diagnostic.goto_prev({ wrap = true })
 		end,
-		"Previous diagnostic",
+		desc = "Previous diagnostic",
 	},
-	["]e"] = {
+	{
+		"]e",
 		function()
 			vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.ERROR, wrap = true })
 		end,
-		"Next error",
+		desc = "Next error",
 	},
-	["[e"] = {
+	{
+		"[e",
 		function()
 			vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.ERROR, wrap = true })
 		end,
-		"Previous error",
+		desc = "Previous error",
 	},
-	["[q"] = { ":cn", "Next qf entry" },
-	["]q"] = { ":cp", "Prev qf entry" },
+	{ "[q", ":cn", desc = "Next qf entry" },
+	{ "]q", ":cp", desc = "Prev qf entry" },
+
+	{
+		mode = { "v" },
+		{ "<leader>/", "<Plug>(comment_toggle_linewise_visual)", desc = "Toggle comment" },
+		{ "rh", ":Gitsigns reset_hunk <CR>", desc = "Hunk" },
+	},
 })
-
-wk.register({
-	["<leader>/"] = {
-		"<Plug>(comment_toggle_linewise_visual)",
-		"Toggle comment",
-	},
-	r = {
-		name = "reset",
-		h = { ":Gitsigns reset_hunk <CR>", "Hunk" },
-	},
-}, { mode = "v" })
-
-wk.register({
-	["<A-i>"] = { "<cmd> ToggleTerm direction=float <CR>", "Toggle floating terminal" },
-	["<C-x>"] = {
-		function()
-			vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true)
-		end,
-		"Escape terminal mode",
-	},
-}, { mode = "t" })
