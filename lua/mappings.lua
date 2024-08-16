@@ -59,10 +59,9 @@ wk.add({
 		{ "<leader>if", ":NvimTreeFindFile<CR>", desc = "Find file" },
 	},
 	{
-		"<leader>b",
 		group = "buffer",
-		{ "x", ":%bd<CR>", desc = "Delete all buffers" },
-		{ "o", ":%bd|e#|bd#<CR>", desc = "Delete all other buffers" },
+		{ "<leader>bx", ":%bd<CR>", desc = "Delete all buffers" },
+		{ "<leader>bo", ":%bd|e#|bd#<CR>", desc = "Delete all other buffers" },
 	},
 	{ "<leader>ra", ":lua vim.lsp.buf.rename() <CR>", desc = "Rename" },
 	{ "<C-n>", ":NvimTreeToggle <CR>", desc = "Toggle Tree" },
