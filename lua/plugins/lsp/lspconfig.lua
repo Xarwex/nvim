@@ -17,7 +17,23 @@ return {
 		-- 		},
 		-- 	},
 		-- })
-		lspconfig.pyright.setup({})
+		lspconfig.pyright.setup({
+			settings = {
+				pyright = {
+					disableOrganizeImports = true,
+					disableTaggedHints = true,
+				},
+				python = {
+					analysis = {
+						diagnosticSeverityOverrides = {
+							-- https://github.com/microsoft/pyright/blob/main/docs/configuration.md#type-check-diagnostics-settings
+							reportUndefinedVariable = "none",
+						},
+					},
+				},
+			},
+		})
+		lspconfig.ruff.setup({})
 	end,
 	cond = not vim.g.vscode,
 }
