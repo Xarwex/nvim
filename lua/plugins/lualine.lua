@@ -66,10 +66,10 @@ return {
 							unnamed = "",
 						},
 					},
-					{
-						"branch",
-						icons_enabled = false,
-					},
+					-- {
+					-- 	"branch",
+					-- 	icons_enabled = false,
+					-- },
 				},
 				lualine_y = {},
 				lualine_z = {},
