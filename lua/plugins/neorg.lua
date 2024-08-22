@@ -5,6 +5,7 @@ return {
 	opts = {
 		load = {
 			["core.defaults"] = {},
+			["core.concealer"] = {},
 			["core.dirman"] = {
 				config = {
 					workspaces = {
@@ -18,4 +19,9 @@ return {
 			},
 		},
 	},
+	config = function(_, opts)
+		require("neorg").setup(opts)
+		vim.wo.foldlevel = 99
+		vim.wo.conceallevel = 2
+	end,
 }
