@@ -9,6 +9,12 @@ wk.add({
 	{ "<C-j>", ss.move_cursor_down, desc = "Window down" },
 	{ "<C-k>", ss.move_cursor_up, desc = "Window up" },
 	{
+		group = "neorg",
+		{ "<leader>nn", "<Plug>(neorg.dirman.new-note)", desc = "New note" },
+		{ "<leader>ni", ":Neorg index<CR>", desc = "Open index" },
+		{ "<leader>nw", ":Neorg workspace ", desc = "Workspace" },
+	},
+	{
 		group = "telescope",
 		{ "<leader>ft", ":Telescope <CR>", desc = "Telescope" },
 		{ "<leader>ff", ":Telescope find_files <CR>", desc = "Find files" },
