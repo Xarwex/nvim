@@ -41,10 +41,6 @@ return {
 						end,
 					},
 					{
-						"branch",
-						icons_enabled = false,
-					},
-					{
 						"buffers",
 						hide_filename_extension = true,
 						symbols = {
@@ -69,6 +65,10 @@ return {
 							readonly = "[ᛟ]",
 							unnamed = "",
 						},
+					},
+					{
+						"branch",
+						icons_enabled = false,
 					},
 				},
 				lualine_y = {},

@@ -13,6 +13,14 @@ wk.add({
 		{ "<leader>nn", "<Plug>(neorg.dirman.new-note)", desc = "New note" },
 		{ "<leader>ni", ":Neorg index<CR>", desc = "Open index" },
 		{ "<leader>nw", ":Neorg workspace ", desc = "Workspace" },
+		{
+			"<leader><leader>",
+			"<Plug>(neorg.qol.todo-items.todo.task-cycle)",
+			desc = "Cycle item state",
+			cond = function()
+				return vim.bo.filetype == "norg"
+			end,
+		},
 	},
 	{
 		group = "telescope",
