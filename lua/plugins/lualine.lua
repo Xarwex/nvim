@@ -66,6 +66,10 @@ return {
 							unnamed = "",
 						},
 					},
+					{
+						"tabs",
+						mode = 2,
+					},
 					-- {
 					-- 	"branch",
 					-- 	icons_enabled = false,

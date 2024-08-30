@@ -9,6 +9,11 @@ wk.add({
 	{ "<C-j>", ss.move_cursor_down, desc = "Window down" },
 	{ "<C-k>", ss.move_cursor_up, desc = "Window up" },
 	{
+		group = "tabs",
+		{ "<leader>tn", ":tabnew", desc = "New tab" },
+		{ "<leader>tx", ":tabclose", desc = "Close tab" },
+	},
+	{
 		group = "neorg",
 		{ "<leader>nn", "<Plug>(neorg.dirman.new-note)", desc = "New note" },
 		{ "<leader>ni", ":Neorg index<CR>", desc = "Open index" },
@@ -17,9 +22,9 @@ wk.add({
 			"<leader><leader>",
 			"<Plug>(neorg.qol.todo-items.todo.task-cycle)",
 			desc = "Cycle item state",
-			cond = function()
-				return vim.bo.filetype == "norg"
-			end,
+			-- cond = function()
+			-- 	return vim.bo.filetype == "norg"
+			-- end,
 		},
 	},
 	{
