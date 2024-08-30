@@ -22,6 +22,7 @@ return {
 			},
 		})
 		lspconfig.ruff.setup({})
+		lspconfig.nil_ls.setup({})
 	end,
 	cond = not vim.g.vscode,
 }
