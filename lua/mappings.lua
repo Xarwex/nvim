@@ -9,11 +9,13 @@ wk.add({
 	{ "<C-j>", ss.move_cursor_down, desc = "Window down" },
 	{ "<C-k>", ss.move_cursor_up, desc = "Window up" },
 	{
+		"<leader>a",
 		group = "tabs",
-		{ "<leader>tn", ":tabnew", desc = "New tab" },
-		{ "<leader>tx", ":tabclose", desc = "Close tab" },
+		{ "<leader>an", ":tabnew", desc = "New tab" },
+		{ "<leader>ax", ":tabclose", desc = "Close tab" },
 	},
 	{
+		"<leader>n",
 		group = "neorg",
 		{ "<leader>nn", "<Plug>(neorg.dirman.new-note)", desc = "New note" },
 		{ "<leader>ni", ":Neorg index<CR>", desc = "Open index" },
@@ -28,6 +30,7 @@ wk.add({
 		},
 	},
 	{
+		"<leader>f",
 		group = "telescope",
 		{ "<leader>ft", ":Telescope <CR>", desc = "Telescope" },
 		{ "<leader>ff", ":Telescope find_files <CR>", desc = "Find files" },
@@ -55,12 +58,14 @@ wk.add({
 		{ "<leader>fn", ":Telescope noice <CR>", desc = "Noice" },
 	},
 	{
+		"<leader>g",
 		group = "go",
 		{ "<leader>gr", ":Telescope lsp_references <CR>", desc = "LSP references" },
 		{ "<leader>gd", ":Telescope lsp_definitions <CR>", desc = "LSP definitions" },
 		{ "<leader>gD", ":Telescope lsp_type_definitions <CR>", desc = "LSP type definitions" },
 	},
 	{
+		"<leader>t",
 		group = "git",
 		{ "<leader>tt", ":Telescope git_status <CR>", desc = "Git status" },
 		{ "<leader>tg", ":Telescope git_commits <CR>", desc = "Git commits" },
@@ -73,11 +78,13 @@ wk.add({
 	{ "<leader>w", ":HopWord <CR>", desc = "HopWord" },
 	{ "<leader>e", ":NvimTreeFocus <CR>", desc = "Focus Tree" },
 	{
+		"<leader>i",
 		group = "tree",
 		{ "<leader>ic", ":NvimTreeCollapse<CR>", desc = "Collapse" },
 		{ "<leader>if", ":NvimTreeFindFile<CR>", desc = "Find file" },
 	},
 	{
+		"<leader>b",
 		group = "buffer",
 		{ "<leader>bx", ":%bd<CR>", desc = "Delete all buffers" },
 		{ "<leader>bo", ":%bd|e#|bd#<CR>", desc = "Delete all other buffers" },
