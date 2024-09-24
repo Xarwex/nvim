@@ -9,6 +9,10 @@ wk.add({
 	{ "<C-j>", ss.move_cursor_down, desc = "Window down" },
 	{ "<C-k>", ss.move_cursor_up, desc = "Window up" },
 	{
+		"<leader>m",
+		group = "yazi",
+	},
+	{
 		"<leader>a",
 		group = "tabs",
 		{ "<leader>an", ":tabnew", desc = "New tab" },

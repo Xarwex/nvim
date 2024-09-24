@@ -56,19 +56,20 @@ return {
 						cond = require("noice").api.status.mode["has"],
 						color = { fg = "#ff9e64" },
 					},
-					{
-						"filename",
-						path = 1,
-						shorting_target = 20,
-						symbols = {
-							modified = "",
-							readonly = "[ᛟ]",
-							unnamed = "",
-						},
-					},
+					-- {
+					-- 	"filename",
+					-- 	path = 1,
+					-- 	shorting_target = 20,
+					-- 	symbols = {
+					-- 		modified = "",
+					-- 		readonly = "[ᛟ]",
+					-- 		unnamed = "",
+					-- 	},
+					-- },
 					{
 						"tabs",
 						mode = 2,
+						path = 1,
 					},
 					-- {
 					-- 	"branch",
