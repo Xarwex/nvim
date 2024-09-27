@@ -19,8 +19,7 @@ opt.rtp:prepend(lazypath)
 g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1
 
--- Figure this out later, maybe should be set to true
-opt.lazyredraw = true
+opt.lazyredraw = false
 
 opt.showmatch = true
 opt.showmode = false
