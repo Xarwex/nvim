@@ -92,6 +92,7 @@ wk.add({
 		group = "buffer",
 		{ "<leader>bx", ":%bd<CR>", desc = "Delete all buffers" },
 		{ "<leader>bo", ":%bd|e#|bd#<CR>", desc = "Delete all other buffers" },
+		{ "<leader>by", ":let @+ = resolve(expand('%:p')) <CR>" },
 	},
 	{ "<leader>ra", ":lua vim.lsp.buf.rename() <CR>", desc = "Rename" },
 	{ "<C-n>", ":NvimTreeToggle <CR>", desc = "Toggle Tree" },
