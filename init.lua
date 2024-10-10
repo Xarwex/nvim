@@ -59,8 +59,8 @@ opt.updatetime = 250
 -- when cursor reaches end/beginning of line
 opt.whichwrap:append("<>[]hl")
 
--- only show the tabline if there are at least two pages
--- opt.showtabline = 1
+-- don't show tabline
+opt.showtabline = 0
 
 g.mapleader = " "
 

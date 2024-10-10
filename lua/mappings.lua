@@ -15,8 +15,10 @@ wk.add({
 	{
 		"<leader>a",
 		group = "tabs",
-		{ "<leader>an", ":tabnew", desc = "New tab" },
-		{ "<leader>ax", ":tabclose", desc = "Close tab" },
+		{ "<leader>ac", ":tabnew <CR>", desc = "New tab" },
+		{ "<leader>ax", ":tabclose <CR>", desc = "Close tab" },
+		{ "<leader>an", ":tabnext <CR>", desc = "Next tab" },
+		{ "<leader>ap", ":tabprev <CR>", desc = "Previous tab" },
 	},
 	{
 		"<leader>n",
