@@ -4,5 +4,6 @@ return {
 		background_colour = "#000000",
 		render = "default",
 		stages = "no_animation",
+		top_down = false,
 	},
 }
