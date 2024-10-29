@@ -16,6 +16,7 @@ return {
 						diagnosticSeverityOverrides = {
 							-- https://github.com/microsoft/pyright/blob/main/docs/configuration.md#type-check-diagnostics-settings
 							reportUndefinedVariable = "none",
+							reportIncompatibleMethodOverride = "none",
 						},
 					},
 				},
