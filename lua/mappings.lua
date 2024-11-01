@@ -80,7 +80,14 @@ wk.add({
 	},
 	{ "<leader>ll", require("lsp_lines").toggle, desc = "Toggle lsp lines" },
 	{ "<leader>x", ":Bdelete <CR>", desc = "Close current" },
-	{ "<leader>ca", ":lua vim.lsp.buf.code_action()<CR>", desc = "Code actions" },
+	{
+		"<leader>ca",
+		function()
+			vim.lsp.buf.code_action()
+		end,
+		desc = "Code actions",
+	},
+
 	{ "<leader>w", ":HopWord <CR>", desc = "HopWord" },
 	{ "<leader>e", ":NvimTreeFocus <CR>", desc = "Focus Tree" },
 	{
