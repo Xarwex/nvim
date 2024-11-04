@@ -18,7 +18,7 @@ return {
 	sources = {
 		completion = {
 			-- remember to enable your providers here
-			enabled_providers = { "lsp", "path", "snippets", "buffer", "lazydev" },
+			enabled_providers = { "lsp", "path", "buffer", "lazydev" },
 		},
 
 		providers = {
@@ -59,11 +59,18 @@ return {
 		-- trigger = { signature_help = { enabled = true } },
 
 		keymap = {
-			select_prev = "<S-Tab>",
-			select_next = "<Tab>",
-			snippet_backward = "<Down>",
-			snippet_forward = "<Up>",
-			accept = "<Enter>",
+			["<C-s>"] = { "show", "show_documentation", "hide_documentation" },
+			["<C-e>"] = { "hide" },
+			["<C-Enter>"] = { "select_and_accept" },
+
+			["<S-Tab>"] = { "select_prev", "fallback" },
+			["<Tab>"] = { "select_next", "fallback" },
+
+			["<C-b>"] = { "scroll_documentation_up", "fallback" },
+			["<C-f>"] = { "scroll_documentation_down", "fallback" },
+
+			-- ["<Tab>"] = { "snippet_forward", "fallback" },
+			-- ["<S-Tab>"] = { "snippet_backward", "fallback" },
 		},
 	},
 }
