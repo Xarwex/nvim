@@ -50,18 +50,19 @@ return {
 		},
 		-- set to 'mono' for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
 		-- adjusts spacing to ensure icons are aligned
-		nerd_font_variant = "normal",
+		-- nerd_font_variant = "normal",
 
 		-- experimental auto-brackets support
-		accept = { auto_brackets = { enabled = true } },
+		-- accept = { auto_brackets = { enabled = true } },
 
 		-- experimental signature help support
 		-- trigger = { signature_help = { enabled = true } },
 
 		keymap = {
-			["<C-s>"] = { "show", "show_documentation", "hide_documentation" },
+			["<C-y>"] = { "show", "show_documentation", "hide_documentation" },
 			["<C-e>"] = { "hide" },
-			["<C-Enter>"] = { "select_and_accept" },
+			-- ["<C-s>"] = { "select_and_accept" },
+			["<Enter>"] = { "select_and_accept" },
 
 			["<S-Tab>"] = { "select_prev", "fallback" },
 			["<Tab>"] = { "select_next", "fallback" },
