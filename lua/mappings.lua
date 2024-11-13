@@ -8,6 +8,10 @@ wk.add({
 	{ "<C-l>", ss.move_cursor_right, desc = "Window right" },
 	{ "<C-j>", ss.move_cursor_down, desc = "Window down" },
 	{ "<C-k>", ss.move_cursor_up, desc = "Window up" },
+	{ "<C-Left>", ss.move_cursor_left, desc = "Window left" },
+	{ "<C-Right>", ss.move_cursor_right, desc = "Window right" },
+	{ "<C-Down>", ss.move_cursor_down, desc = "Window down" },
+	{ "<C-Up>", ss.move_cursor_up, desc = "Window up" },
 	{
 		"<leader>m",
 		group = "yazi",

@@ -15,27 +15,6 @@ return {
 			},
 		},
 	},
-	sources = {
-		completion = {
-			-- remember to enable your providers here
-			enabled_providers = { "lsp", "path", "buffer", "lazydev" },
-		},
-
-		providers = {
-			lazydev = {
-				name = "lazydev", -- IMPORTANT: use the same name as you would for nvim-cmp
-				module = "blink.compat.source",
-
-				-- all blink.cmp source config options work as normal:
-				score_offset = 3,
-
-				opts = {
-					-- options for the completion source
-					-- equivalent to `option` field of nvim-cmp source config
-				},
-			},
-		},
-	},
 	-- use a release tag to download pre-built binaries
 	version = "v0.*",
 	-- OR build from source, requires nightly: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
@@ -58,20 +37,47 @@ return {
 		-- experimental signature help support
 		-- trigger = { signature_help = { enabled = true } },
 
+		-- keymap = "enter",
 		keymap = {
-			["<C-y>"] = { "show", "show_documentation", "hide_documentation" },
-			["<C-e>"] = { "hide" },
-			-- ["<C-s>"] = { "select_and_accept" },
-			["<Enter>"] = { "select_and_accept" },
+			["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
+			["<C-e>"] = { "hide", "fallback" },
+			["<CR>"] = { "accept", "fallback" },
 
-			["<S-Tab>"] = { "select_prev", "fallback" },
 			["<Tab>"] = { "select_next", "fallback" },
+			["<S-Tab>"] = { "select_prev", "fallback" },
+
+			["<Up>"] = { "snippet_forward", "fallback" },
+			["<Down>"] = { "snippet_backward", "fallback" },
+			["<C-p>"] = { "select_prev", "fallback" },
+			["<C-n>"] = { "select_next", "fallback" },
 
 			["<C-b>"] = { "scroll_documentation_up", "fallback" },
 			["<C-f>"] = { "scroll_documentation_down", "fallback" },
+		},
 
-			-- ["<Tab>"] = { "snippet_forward", "fallback" },
-			-- ["<S-Tab>"] = { "snippet_backward", "fallback" },
+		windows = {
+			autocomplete = { selection = "auto_insert" },
+		},
+		sources = {
+			completion = {
+				-- remember to enable your providers here
+				enabled_providers = { "lsp", "path", "buffer", "lazydev" },
+			},
+
+			providers = {
+				lazydev = {
+					name = "lazydev", -- IMPORTANT: use the same name as you would for nvim-cmp
+					module = "blink.compat.source",
+
+					-- all blink.cmp source config options work as normal:
+					score_offset = 3,
+
+					opts = {
+						-- options for the completion source
+						-- equivalent to `option` field of nvim-cmp source config
+					},
+				},
+			},
 		},
 	},
 }

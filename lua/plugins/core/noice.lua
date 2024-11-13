@@ -76,6 +76,15 @@ return {
 			inc_rename = false, -- enables an input dialog for inc-rename.nvim
 			lsp_doc_border = true, -- add a border to hover docs and signature help
 		},
+		notify = {
+			-- Noice can be used as `vim.notify` so you can route any notification like other messages
+			-- Notification messages have their level and other properties set.
+			-- event is always "notify" and kind can be any log level as a string
+			-- The default routes will forward notifications to nvim-notify
+			-- Benefit of using Noice for this is the routing and consistent history view
+			enabled = true,
+			view = "notify",
+		},
 	},
 	config = function(_, opts)
 		require("noice").setup(opts)
