@@ -46,10 +46,10 @@ return {
 			["<Tab>"] = { "select_next", "fallback" },
 			["<S-Tab>"] = { "select_prev", "fallback" },
 
-			["<Up>"] = { "snippet_forward", "fallback" },
-			["<Down>"] = { "snippet_backward", "fallback" },
-			["<C-p>"] = { "select_prev", "fallback" },
-			["<C-n>"] = { "select_next", "fallback" },
+			["<Up>"] = { "select_next", "fallback" },
+			["<Down>"] = { "select_prev", "fallback" },
+			["<C-p>"] = { "snippet_backward", "fallback" },
+			["<C-n>"] = { "snippet_forward", "fallback" },
 
 			["<C-b>"] = { "scroll_documentation_up", "fallback" },
 			["<C-f>"] = { "scroll_documentation_down", "fallback" },

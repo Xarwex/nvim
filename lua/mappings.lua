@@ -3,6 +3,8 @@ local ss = require("smart-splits")
 local telescope_builtin = require("telescope.builtin")
 
 wk.add({
+	{ "<C-s>", ":w <CR>", desc = "Save file" },
+	{ "<C-q>", ":wqa <CR>", desc = "Save all and exit" },
 	{ "<Esc>", ":noh <CR>", desc = "Clear highlights" },
 	{ "<C-h>", ss.move_cursor_left, desc = "Window left" },
 	{ "<C-l>", ss.move_cursor_right, desc = "Window right" },
