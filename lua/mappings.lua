@@ -1,6 +1,8 @@
 local wk = require("which-key")
 local ss = require("smart-splits")
 local telescope_builtin = require("telescope.builtin")
+local telescope_config = require("telescope-config")
+vim.print(telescope_config)
 
 wk.add({
 	{ "<C-s>", ":w <CR>", desc = "Save file" },
@@ -80,6 +82,13 @@ wk.add({
 		"<leader>t",
 		group = "git",
 		{ "<leader>tt", ":Telescope git_status <CR>", desc = "Git status" },
+		{
+			"<leader>tt",
+			function()
+				telescope_config.git_status_difftastic_picker()
+			end,
+			desc = "Git status",
+		},
 		{ "<leader>tg", ":Telescope git_commits <CR>", desc = "Git commits" },
 		{ "<leader>tb", ":Gitsigns toggle_current_line_blame <CR>", desc = "Toggle git blame" },
 		{ "<leader>td", ":Gitsigns toggle_deleted <CR>", desc = "Toggle deleted" },
