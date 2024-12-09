@@ -89,7 +89,7 @@ wk.add({
 	{
 		"<leader>ca",
 		function()
-			vim.lsp.buf.code_action()
+			require("tiny-code-action").code_action()
 		end,
 		desc = "Code actions",
 	},
