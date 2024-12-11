@@ -16,5 +16,4 @@ return {
 		end
 	end,
 	cond = not vim.g.vscode,
-	enabled = false,
 }
