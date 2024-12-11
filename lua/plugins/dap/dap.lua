@@ -99,5 +99,20 @@ return {
 			mode = { "n", "v" },
 		},
 	},
+	config = function()
+		-- require("dap.ext.vscode").load_launchjs(nil, { lldb = { "rust" } })
+		-- require("dap").configurations = {
+		-- 	rust = function()
+		-- 		local dap_configurations = 				return dap_configurations
+		-- 	end,
+		-- }
+		local dap = require("dap")
+		local lldb_path = vim.fn.trim(vim.fn.system("which lldb-dap"))
+		dap.adapters.lldb = {
+			type = "executable",
+			command = lldb_path, -- adjust as needed, must be absolute path
+			name = "lldb",
+		}
+	end,
 	cond = not vim.g.vscode,
 }
