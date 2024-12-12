@@ -98,6 +98,27 @@ return {
 			desc = "Preview",
 			mode = { "n", "v" },
 		},
+		{
+			"<leader>do",
+			function()
+				require("dapui").open()
+			end,
+			desc = "Open dapui",
+		},
+		{
+			"<leader>dc",
+			function()
+				require("dapui").close()
+			end,
+			desc = "Close dapui",
+		},
+		{
+			"<leader>dl",
+			function()
+				require("dap.ext.vscode").load_launchjs(nil, { lldb = { "rust" } })
+			end,
+			desc = "Reload json",
+		},
 	},
 	config = function()
 		-- require("dap.ext.vscode").load_launchjs(nil, { lldb = { "rust" } })
