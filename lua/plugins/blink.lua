@@ -39,15 +39,15 @@ return {
 
 		-- keymap = "enter",
 		keymap = {
-			["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
+			["<C-d>"] = { "show", "show_documentation", "hide_documentation" },
 			["<C-e>"] = { "hide", "fallback" },
 			["<CR>"] = { "accept", "fallback" },
 
 			["<Tab>"] = { "select_next", "fallback" },
 			["<S-Tab>"] = { "select_prev", "fallback" },
 
-			["<Up>"] = { "select_next", "fallback" },
-			["<Down>"] = { "select_prev", "fallback" },
+			["<Up>"] = { "select_prev", "fallback" },
+			["<Down>"] = { "select_next", "fallback" },
 			["<C-p>"] = { "snippet_backward", "fallback" },
 			["<C-n>"] = { "snippet_forward", "fallback" },
 
