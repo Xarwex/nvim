@@ -113,7 +113,7 @@ return {
 			desc = "Close dapui",
 		},
 		{
-			"<leader>dl",
+			"<leader>dj",
 			function()
 				require("dap.ext.vscode").load_launchjs(nil, { lldb = { "rust" } })
 			end,
